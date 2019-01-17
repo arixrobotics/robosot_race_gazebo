@@ -5,6 +5,6 @@
   <arg name="name" default="ball"/>
 
   <!-- Spawn ball -->
-  <node name="spawn_$(arg name)" pkg="gazebo_ros" type="spawn_model" args="-file $(find robosot_race)/models/balls/$(arg colour)/model.sdf -sdf -x $(arg x_pos) -y $(arg y_pos) -z 0.1 -model $(arg name)" />
+  <node name="spawn_$(arg name)" pkg="gazebo_ros" type="spawn_model" args="-file $(find robosot_race_gazebo)/models/balls/$(arg colour)/model.sdf -sdf -x $(arg x_pos) -y $(arg y_pos) -z 0.1 -model $(arg name)" />
 
 </launch>

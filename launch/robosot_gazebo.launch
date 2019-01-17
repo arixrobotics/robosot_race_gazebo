@@ -5,7 +5,7 @@
   <arg name="z_pos" default="0.0"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find robosot_race)/worlds/robosot_race.world"/>
+    <arg name="world_name" value="$(find robosot_race_gazebo)/worlds/robosot_race.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
@@ -18,35 +18,35 @@
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
 
   <!-- Spawn balls -->
-  <include file="$(find robosot_race)/launch/ball.launch">
+  <include file="$(find robosot_race_gazebo)/launch/ball.launch">
     <arg name="name" value="ball1"/>
     <arg name="colour" value="blue"/>
     <arg name="x_pos" value="1.0"/>
     <arg name="y_pos" value="1.0"/>
   </include>
 
-  <include file="$(find robosot_race)/launch/ball.launch">
+  <include file="$(find robosot_race_gazebo)/launch/ball.launch">
     <arg name="name" value="ball2"/>
     <arg name="colour" value="red"/>
     <arg name="x_pos" value="1.0"/>
     <arg name="y_pos" value="0.5"/>
   </include>
   
-  <include file="$(find robosot_race)/launch/ball.launch">
+  <include file="$(find robosot_race_gazebo)/launch/ball.launch">
     <arg name="name" value="ball3"/>
     <arg name="colour" value="black"/>
     <arg name="x_pos" value="1.0"/>
     <arg name="y_pos" value="0.0"/>
   </include>
 
-  <include file="$(find robosot_race)/launch/ball.launch">
+  <include file="$(find robosot_race_gazebo)/launch/ball.launch">
     <arg name="name" value="ball4"/>
     <arg name="colour" value="yellow"/>
     <arg name="x_pos" value="1.0"/>
     <arg name="y_pos" value="-0.5"/>
   </include>
   
-  <include file="$(find robosot_race)/launch/ball.launch">
+  <include file="$(find robosot_race_gazebo)/launch/ball.launch">
     <arg name="name" value="ball5"/>
     <arg name="colour" value="white"/>
     <arg name="x_pos" value="1.0"/>
