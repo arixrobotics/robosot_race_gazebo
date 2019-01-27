@@ -14,14 +14,22 @@
   </include>
 
   <!--param name="robot_description" command="$(find xacro)/xacro --> <!--inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" /-->
-  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_burger_for_autorace.urdf.xacro" />
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  <!--param name="robot_description" command="$(find xacro)/xacro --><!--inorder $(find turtlebot3_description)/urdf/turtlebot3_burger_for_robosot.urdf.xacro" /-->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find robosot_race_gazebo)/models/turtlebot3_burger_for_robosot.urdf.xacro" />  
+<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
 
   <!-- Spawn balls -->
   <include file="$(find robosot_race_gazebo)/launch/ball.launch">
     <arg name="name" value="ball1"/>
     <arg name="colour" value="blue"/>
     <arg name="x_pos" value="1.0"/>
+    <arg name="y_pos" value="1.0"/>
+  </include>
+  
+  <include file="$(find robosot_race_gazebo)/launch/ball.launch">
+    <arg name="name" value="ball1b"/>
+    <arg name="colour" value="blue"/>
+    <arg name="x_pos" value="1.5"/>
     <arg name="y_pos" value="1.0"/>
   </include>
 
